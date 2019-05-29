@@ -72,6 +72,7 @@ public class AccountController {
     }
 
     @PostMapping(path = "/accounts", headers = "X-API-VERSION=1")
+    @ResponseStatus(value = HttpStatus.CREATED)
     public Account createAccount(@RequestBody @Valid Account account) {
         return accounts.save(account);
     }
