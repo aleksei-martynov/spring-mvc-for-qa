@@ -1,14 +1,14 @@
 # Тренинг «Введение в Spring MVC для тестировщиков API и веб-приложений»
 15 часов.<br/>
-_Рассмотрим разработку REST- и WEB-приложений на Spring MVC и аспекты автоматизированного тестирования._
+_Рассмотрим разработку REST-приложений на Spring MVC и аспекты автоматизированного тестирования._
 
 # Для кого
-- ручные QA Spring web-приложений
-- разработчики автотестов Spring web-приложений
+- ручные QA Spring REST API
+- разработчики автотестов Spring REST API
 
 # На выходе
 - участники поймут структуру REST API и API-автотестов
-- смогут ускорить разработку автотестов за счет возможностей Spring и компонентов в его составе
+- смогут ускорить разработку автотестов за счет возможностей Spring MVC и компонентов в его составе
 
 # Рабочая кодовая база
 ```
@@ -16,7 +16,7 @@ git clone --depth 1 -b <YYYY-MM-project> https://github.com/eugene-krivosheyev/s
 ```
 
 # Программа
-## Введение в протокол HTTP и Java EE web-приложения (3/1)
+## Введение в протокол HTTP и Java EE web-приложения (1/0)
 - Задачи и ограничения протокола HTTP
 - Методы запросов
 - Заголовки
@@ -24,24 +24,36 @@ git clone --depth 1 -b <YYYY-MM-project> https://github.com/eugene-krivosheyev/s
 - Параметры и аргументы запросов
 - Cookies
 - Web-контейнеры
-- Структура Java EE web-приложений
+- Структура Java EE web-приложений, веб-компоненты
 
 ### Live coding demo
 - Демо протокола [HTTP](https://httpbin.org)
-- Демо контейнера [Tomcat](http://tomcat.apache.org)
+- [Демо](https://github.com/eugene-krivosheyev/servletjspdemo) контейнера [Tomcat](http://tomcat.apache.org)
 - Сборка и развертывание демо-приложения на web-контейнере
 - Отладка запросов и ответов в REST-клиенте (IDEA plugin)
 
+## Введение в Spring container и чем он помогает разработчику (1/.5)
+- Управление жизненным циклом компонентов
+- Разрешение зависимостей через DI и их контекстная подмена
+- Вплетение аспектов в компоненты: Tx, security, async, retry, cache, custom advices
+- Виды конфигураций: xml, annotation-driven, groovy, java-based 
+- Профили 
+- Понятие контекста
+- Поддержка в IDEA Ultimate
+- Что дает Spring Boot
+- Два способа сборки и запуска приложения: Spring MVC и Spring Boot
+
 ### Practice Iteration 0
-- Анализ Spring CRUD web-приложения
+- Анализ Spring CRUD REST API application
 - Сборка и запуск
-- Анализ запросов и ответов в браузере
+- Анализ запросов и ответов в браузере с помощью Swagger
 
 ## Концепция REST API и Spring RESTful Services (3/1)
 - Сравнение RPC и REST
 - Гайдлайны REST API
 - JSON-сериализация данных
 - REST-клиенты
+- Архитектура MVC и ее редукция для REST API
 - Spring MVC для реализации REST API
 - Контроллеры
 - Отображение данных на JSON
@@ -59,22 +71,23 @@ git clone --depth 1 -b <YYYY-MM-project> https://github.com/eugene-krivosheyev/s
 ## Автоматизированное тестирование Spring REST API (3/1)
 - Структура автоматизированного теста на Spring MVC Test
 - Тестовые дублеры для Spring-компонентов
-- Тестовые конфигурации
+- Тестовые конфигурации и профили
 - Тестовые дублеры для внешних веб- и REST-сервисов
 - [Чем Spring Boot помогает в тестировании](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-testing)
 
 ### Live coding demo
 - Разработка полностью автономного модульного теста
 - Замещение Spring-компонентов и внешних сервисов
+- State-based testing и interaction-based testing
 - Запуск тестового набора
 - Анализ отчетности
 
 ### Practice Iteration 2
-- Покрытие интеграционными тестами Spring CRUD через REST API
+- Покрытие _интеграционными_ тестами Spring CRUD через REST API
 - Сборка и запуск тестов
 - Анализ тестовой отчетности
 
-## Production-ready REST API (3/1)
+## Production-ready REST API (3/1)*
 - Усложненная JSON-сериализация java-объектов
 - Версионирование REST API
 - Аутентификация
@@ -88,7 +101,7 @@ git clone --depth 1 -b <YYYY-MM-project> https://github.com/eugene-krivosheyev/s
 - Сборка и запуск тестов
 - Анализ тестовой отчетности
 
-## Микро-сервисная архитектура (3/2)
+## Микро-сервисная архитектура (3/2)*
 - Микро-сервисная архитектура
 - Архитектурные шаблоны
 - Важность автотестов, сервисных тест-дублёров и документации
