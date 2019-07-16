@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.PositiveOrZero;
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api", headers = "X-API-VERSION")
@@ -44,6 +45,15 @@ public class AccountController {
     )
     public Collection<Account> getAllAccounts() {
         return accounts.findAll();
+    }
+
+    @GetMapping(path = "/accountsre")
+    public ResponseEntity<List<String>> getAllAccountsRE() {
+
+        List<Account> accs = accounts.findAll();
+        ResponseEntity re = new ResponseEntity(accs, HttpStatus.OK);
+
+        return re;
     }
 
     /**
